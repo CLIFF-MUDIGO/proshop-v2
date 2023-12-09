@@ -80,7 +80,7 @@ const products = [
     },
     {
 
-      
+   
         name: "sample",
         image: "/images/sample.jpg",
         description: "sample",
