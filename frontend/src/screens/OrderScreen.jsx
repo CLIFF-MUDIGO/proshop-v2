@@ -61,6 +61,14 @@ const OrderScreen = () => {
                                 <Image src={item.image} alt={item.name} fluid rounded />
 
                                 </Col>
+                                <Col>
+                                <Link to={`/product/${item._id}`}>
+                                    {item.name}
+                                </Link>
+                                </Col>
+                                <Col md={4}>
+                                {item.qty} x ${item.price} = ${item.qty * item.price}
+                                </Col>
                             </Row>
 
                         </ListGroup.Item>
@@ -68,7 +76,35 @@ const OrderScreen = () => {
                </ListGroup.Item>
             </ListGroup>
         </Col>
-        <Col md={4}>Column</Col>
+        <Col md={4}>
+         <Card>
+            <ListGroup variant="flush">
+                <ListGroup.Item>
+                    <h2>Order Summary</h2>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                    <Row>
+                        <Col>Items</Col>
+                        <Col>${order.itemsPrice}</Col>
+                    </Row>
+                    <Row>
+                        <Col>Shipping</Col>
+                        <Col>${order.shippingPrice}</Col>
+                    </Row>
+                    <Row>
+                        <Col>Tax</Col>
+                        <Col>${order.taxPrice}</Col>
+                    </Row>
+                    <Row>
+                        <Col>Order Total</Col>
+                        <Col>${order.totalPrice}</Col>
+                    </Row>
+                </ListGroup.Item>
+                {/*PAY ORDER PLACEHOLDER */}
+                {/* MARK AS DELIVERED PLACEHOLDER */}
+            </ListGroup>
+         </Card>
+        </Col>
     </Row>
     </>
   );
